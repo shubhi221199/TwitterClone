@@ -1,0 +1,35 @@
+extends Layouts/login-layout.pug
+
+block content 
+     .loginContainer 
+          h1 Register 
+          form#registerForm(method="post", onsubmit ="event.preventDefault(); validateForm();") 
+                input(type="text", name="firstname" , placeholder= "First name",require="")
+                input(type="text", name="lastname" , placeholder= "Last name",require="")
+                input(type="text", name="Username" , placeholder= "Username",require="")
+                input(type="email", name="Email" , placeholder= "Email",require="")
+                input#password(type="password", name="password" , placeholder= "Password",require="")
+                input#passwordConf(type="password", name="passwordconf" , placeholder= "Confirm Password",require="")
+                br
+                input(type="submit", value="Register")
+                br 
+                    
+                a(href="/login") Already have an account? Login here.
+        
+     script.
+                      var pass=document.getElementById("password") 
+                      var passconf=document.getElementById("passwordConf") 
+                      var form =document.getElementById("registerForm") 
+
+                       console.log("hiiiout");
+                      
+                      function validateForm (){
+                        if(pass.value != passconf.value){
+                           alert("Passwords do not match. Please try again.")
+                        }
+                        else{
+                            form.submit()
+                        }
+                      }
+   
+                                        

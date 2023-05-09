@@ -1,0 +1,14 @@
+extends Layouts/login-layout.pug
+
+block content 
+     .loginContainer 
+          h1 Login 
+          form(method="post") 
+          input(type="text", name="Username" , placeholder= "Username or email",require="")
+          input(type="password", name="password" , placeholder= "Password",require="")
+          br
+          input(type="submit", value="Login")
+          br 
+            
+          a(href="/register") Need an account register here.
+                                        
