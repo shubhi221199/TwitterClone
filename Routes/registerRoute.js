@@ -14,7 +14,22 @@ router.get("/", (req, res, next)=>{
 })
 
 router.post("/", (req, res, next)=>{
-    console.log(req.body)
-    res.status(200).render("register")
+    var firstname =req.body.firstname.trim();
+    var lastname =req.body.lastname.trim();
+    var Username =req.body.Username.trim();
+    var Email =req.body.Email.trim();
+    var password =req.body.password;
+
+    var payload = req.body
+      
+    console.log(payload)
+    if(firstname && lastname && Email && password && Username){
+      
+    }
+   else{
+      payload.errorMessage ="fill the form";
+       res.status(200).render("register",payload)
+   }
+    // console.log(req.body)
 })
 module.exports = router;

@@ -4,6 +4,7 @@ const port = 3003;
 const middleware = require("./middleware.js")
 const bodyParser = require("body-parser")
 const path = require("path")
+const mongoose = require("./database.js")
 
 
 app.listen(port, (()=>{
